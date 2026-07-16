@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>ZOBOX Artificial Floral Report</title>
+  <style>
+    :root{--navy:#062f55;--blue:#0d67ad;--sky:#eaf5ff;--orange:#f47a24;--peach:#fff0e6;--ink:#152235;--muted:#657386;--line:#e1ebf4;--bg:#f6f9fc;--card:#fff;--green:#0f8a6c;--red:#b6462f;--shadow:0 18px 46px rgba(6,47,85,.12);--soft:0 8px 24px rgba(6,47,85,.08)}
+    *{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--bg);color:var(--ink);font:13.5px/1.5 Inter,"Segoe UI",Arial,sans-serif}a{color:var(--blue);text-decoration:none}a:hover{text-decoration:underline}
+    .page{display:grid;grid-template-columns:250px minmax(0,1fr);min-height:100vh}.side{position:sticky;top:0;height:100vh;overflow:auto;background:linear-gradient(180deg,#052d51,#073b68);color:#fff;padding:24px 20px}.brand{display:flex;gap:12px;align-items:center}.logo{width:46px;height:46px;border-radius:15px;background:linear-gradient(135deg,var(--orange),#ffbf6d);display:grid;place-items:center;font-weight:900;box-shadow:0 10px 28px rgba(244,122,36,.35)}.brand small{display:block;color:#dcecff;font-size:10px;text-transform:uppercase;letter-spacing:.1em}.brand strong{font-size:15px}.nav-title{font-size:11px;color:#9dc2e2;letter-spacing:.12em;text-transform:uppercase;margin:24px 8px 8px}nav a{display:flex;align-items:center;gap:9px;padding:9px 11px;border-radius:12px;font-size:12px;color:#e4f2ff;margin-bottom:7px;border:1px solid rgba(255,255,255,.11)}nav a:hover{background:rgba(255,255,255,.12);text-decoration:none;color:#fff}.aside-note{margin-top:22px;padding:13px;border:1px solid rgba(255,255,255,.15);border-radius:16px;color:#cde3f6;font-size:11px}
+    main{min-width:0}.hero{position:relative;overflow:hidden;min-height:440px;padding:64px 7vw 42px;color:#fff;background:radial-gradient(circle at 83% 18%,rgba(244,122,36,.3),transparent 25%),linear-gradient(135deg,#052d51 0%,#0b5188 60%,#1377ba 100%)}.hero:after{content:"";position:absolute;right:-130px;bottom:-170px;width:460px;height:460px;border-radius:50%;background:rgba(255,255,255,.08)}.kicker{display:inline-flex;border:1px solid rgba(255,255,255,.24);padding:8px 12px;border-radius:999px;color:#dcefff;font-size:10px;letter-spacing:.08em;text-transform:uppercase}.hero h1{font-size:clamp(30px,4vw,50px);line-height:1.04;margin:24px 0 18px;max-width:930px}.hero p{max-width:880px;color:#dcefff;font-size:15px}.hero-actions{display:flex;flex-wrap:wrap;gap:12px;margin-top:24px}.btn{border:0;border-radius:999px;padding:10px 14px;background:#fff;color:var(--navy);font-weight:850;cursor:pointer;display:inline-flex;align-items:center}.btn.orange{background:var(--orange);color:#fff}.btn.ghost{background:rgba(255,255,255,.14);color:#fff;border:1px solid rgba(255,255,255,.26)}
+    .content{padding:28px 7vw 84px}section{scroll-margin-top:24px;margin:0 0 32px}.head{display:flex;gap:14px;align-items:flex-start;margin-bottom:17px}.num{color:var(--orange);font-weight:900;letter-spacing:.08em;flex:0 0 auto}.head h2{margin:0;color:var(--navy);font-size:clamp(21px,2.4vw,29px);line-height:1.15}.lead{font-size:14px;color:#394a5f;max-width:1000px}.grid{display:grid;gap:14px}.cols-2{grid-template-columns:repeat(2,minmax(0,1fr))}.cols-3{grid-template-columns:repeat(3,minmax(0,1fr))}.cols-4{grid-template-columns:repeat(4,minmax(0,1fr))}.card{background:#fff;border:1px solid var(--line);border-radius:22px;padding:17px;box-shadow:var(--soft)}.blue-card{background:linear-gradient(180deg,#fff,var(--sky));border-color:#cce3f7}.orange-card{background:linear-gradient(180deg,#fff,var(--peach));border-color:#ffd6bb}.metric b{display:block;font-size:27px;color:var(--navy);line-height:1.05;margin-bottom:7px}.metric span{color:var(--muted);font-size:11.5px}h3{margin:0 0 10px;color:var(--navy);font-size:17px}.tag{display:inline-block;background:#fff0e6;color:#a84b12;border:1px solid #ffd8bf;border-radius:999px;padding:4px 9px;font-size:10.5px;font-weight:800;margin-bottom:8px}ul.clean{padding-left:17px;margin:8px 0 0}ul.clean li{margin-bottom:7px}
+    table{width:100%;border-collapse:separate;border-spacing:0;overflow:hidden;border:1px solid var(--line);border-radius:18px;background:#fff;box-shadow:var(--soft);font-size:12px}th,td{padding:10px 11px;border-bottom:1px solid var(--line);vertical-align:top}tr:last-child td{border-bottom:0}th{background:#eef7ff;color:#0b3d68;text-transform:uppercase;letter-spacing:.04em;font-size:10.5px;text-align:left}.table-wrap{overflow:auto;border-radius:18px}
+    .import-compare{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}.market-panel{border:1px solid var(--line);border-radius:18px;padding:14px;background:#fff}.market-panel h3{font-size:15px}.year-row{display:grid;grid-template-columns:46px 1fr 58px;align-items:center;gap:9px;margin:9px 0}.year-label{font-weight:800;color:#22344c}.mini-track{height:10px;border-radius:999px;background:#dcecf8;overflow:hidden}.mini-fill{height:100%;border-radius:999px;background:linear-gradient(90deg,var(--blue),var(--orange))}.mini-value{font-weight:900;color:var(--navy);text-align:right}.small{font-size:11px;color:var(--muted)}
+    .mini-sites{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}.mini-site{border-radius:22px;overflow:hidden;background:#fff;border:1px solid var(--line);box-shadow:var(--soft)}.browser{height:30px;background:#edf6ff;display:flex;gap:5px;align-items:center;padding-left:12px}.dot{width:8px;height:8px;border-radius:50%;background:#8bbbe4}.mini-hero{height:122px;background:linear-gradient(135deg,#dcefff,#fff0e6);display:grid;place-items:center;font-size:48px}.mini-body{padding:14px}.pill{display:inline-flex;border-radius:999px;padding:6px 10px;font-size:11px;background:#eaf5ff;color:#0b5f9e;font-weight:800}.pill.orange{background:#fff0e6;color:#b35414}
+    .matrix{display:grid;grid-template-columns:repeat(2,1fr);gap:14px}.roadmap{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}.roadmap .card{border-top:4px solid var(--orange)}.source-box{background:#fff;border:1px solid var(--line);border-radius:22px;padding:15px;box-shadow:var(--soft);font-size:10.8px;color:#56677c}.source{margin-bottom:7px}.source:last-child{margin-bottom:0}
+    .modal{position:fixed;inset:0;background:rgba(5,18,31,.62);display:none;align-items:center;justify-content:center;padding:22px;z-index:50}.modal.show{display:flex}.modal-card{width:min(720px,100%);background:#fff;border-radius:24px;padding:22px;box-shadow:0 24px 80px rgba(0,0,0,.3);position:relative}.close{position:absolute;right:14px;top:12px;border:0;background:#eef7ff;border-radius:50%;width:32px;height:32px;cursor:pointer;color:var(--navy);font-weight:900}.modal h3{font-size:21px}.cta{display:inline-block;margin-top:10px;background:var(--navy);color:#fff;padding:9px 12px;border-radius:999px}.cta:hover{color:#fff}
+    @media(max-width:900px){.page{grid-template-columns:1fr}.side{position:relative;height:auto}.content{padding:22px}.hero{padding:48px 22px}.cols-2,.cols-3,.cols-4,.import-compare,.mini-sites,.matrix,.roadmap{grid-template-columns:1fr}}
+  </style>
+</head>
+<body>
+<div class="page">
+  <aside class="side">
+    <div class="brand"><div class="logo">Z</div><div><small>Industry Report</small><strong>ZOBOX Floral</strong></div></div>
+    <div class="nav-title">Nội dung</div>
+    <nav>
+      <a href="#exec">01. Executive View</a>
+      <a href="#fit">02. Company Fit</a>
+      <a href="#market">03. Market Evidence</a>
+      <a href="#buyers">04. Buyer Markets</a>
+      <a href="#advantage">05. Vietnam Position</a>
+      <a href="#benchmark">06. Supplier Benchmark</a>
+      <a href="#pricing">07. Pricing & SEO</a>
+      <a href="#opportunity">08. Opportunity Matrix</a>
+      <a href="#roadmap">09. 90-Day Roadmap</a>
+      <a href="#sources">Sources</a>
+    </nav>
+  </aside>
+  <main>
+    <header class="hero">
+      <span class="kicker">Client-ready strategy report · 2026</span>
+      <h1>ZOBOX Artificial Floral Report</h1>
+      <p>Báo cáo tổng quan cơ hội xuất khẩu cho ZOBOX trong ngành hoa giả, hoa cưới, wedding/event decoration và OEM/ODM floral décor — kết hợp market evidence, benchmark nhà bán Việt Nam trên Alibaba.com, insight buyer và roadmap 90 ngày.</p>
+      <div class="hero-actions">
+        <button class="btn orange" data-modal="m-method">Research note</button>
+        <a class="btn ghost" target="_blank" href="https://www.facebook.com/p/ZOBOX-Artificial-Flower-Manufacturing-Company-61558031019046/">Open Facebook</a>
+        <a class="btn ghost" target="_blank" href="https://www.instagram.com/zoboxflowers/">Open Instagram</a>
+      </div>
+    </header>
+
+    <div class="content">
+      <section id="exec">
+        <div class="head"><div class="num">01</div><div><h2>Executive View</h2><p class="lead">ZOBOX có fit tốt với Alibaba.com nếu đi theo hướng B2B/OEM/ODM thay vì bán lẻ. Câu chuyện nên là “Vietnam artificial flower manufacturer for wedding, event and décor buyers” — tập trung vào bộ sưu tập, custom design, MOQ container, hình ảnh sản xuất và buyer proof.</p></div></div>
+        <div class="grid cols-4">
+          <div class="card metric"><b>US$3.09B</b><span>global artificial flowers market size 2024, Grand View Research</span></div>
+          <div class="card metric"><b>US$482.7M</b><span>U.S. 2024 imports under HS 670290 proxy, WITS</span></div>
+          <div class="card metric"><b>80</b><span>Alibaba public “artificial flower Vietnam suppliers” proxy</span></div>
+          <div class="card metric"><b>50+</b><span>export markets mentioned in ZOBOX public materials</span></div>
+        </div>
+        <div class="grid cols-3" style="margin-top:14px">
+          <div class="card blue-card"><span class="tag">Position</span><h3>Không bán như florist</h3><p>Định vị là manufacturer/OEM cho wholesaler, event company, wedding rental và décor brand.</p></div>
+          <div class="card orange-card"><span class="tag">Hero SKUs</span><h3>Wedding & event sets</h3><p>Ưu tiên arch flower, flower wall, bouquet/stem collection và seasonal/event packages.</p></div>
+          <div class="card blue-card"><span class="tag">Success condition</span><h3>Proof before traffic</h3><p>Cần ảnh xưởng, video đóng gói, MOQ, lead time, private label, container loading và case xuất khẩu.</p></div>
+        </div>
+      </section>
+
+      <section id="fit">
+        <div class="head"><div class="num">02</div><div><h2>Company Fit</h2><p class="lead">Theo thông tin công khai, ZOBOX hoạt động trong nhóm artificial flower manufacturing tại Nam Định, với định hướng sản phẩm liên quan tới hoa cưới, decoration, OEM/ODM và xuất khẩu. Đây là nhóm sản phẩm có độ phù hợp cao với buyer B2B trên Alibaba.com nếu được đóng gói theo collection, use case và năng lực tùy chỉnh.</p></div></div>
+        <div class="grid cols-2">
+          <div class="card">
+            <h3>3 sản phẩm chủ lực nên đóng gói</h3>
+            <ul class="clean">
+              <li><b>Wedding/Event Floral Sets:</b> flower arch, backdrop, aisle flower, table runner, floral arrangement cho wedding planner và event company.</li>
+              <li><b>Artificial Stems & Bouquets:</b> rose, orchid, peony, hydrangea, seasonal stems; phù hợp wholesaler, florist supply, décor distributor.</li>
+              <li><b>OEM/ODM & Private Label Floral Décor:</b> custom color, packaging, logo/private label, container program cho retailer/importer.</li>
+            </ul>
+          </div>
+          <div class="card">
+            <h3>Thông tin nên chuẩn bị để tăng chuyển đổi</h3>
+            <ul class="clean">
+              <li>Năng lực sản xuất/tháng, số chuyền, số công nhân, MOQ theo từng nhóm sản phẩm.</li>
+              <li>Thị trường xuất khẩu hiện có: quốc gia, loại buyer, repeat order và hình ảnh/feedback dự án.</li>
+              <li>Chứng chỉ/vật liệu: UV, fire-retardant, REACH/Prop 65 nếu nhắm EU/U.S. retail.</li>
+              <li>Ảnh thật xưởng, video QC, container loading, catalogue và bảng màu.</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <section id="market">
+        <div class="head"><div class="num">03</div><div><h2>Market Evidence</h2><p class="lead">Ngành hoa giả hưởng lợi từ nhu cầu trang trí bền, ít bảo trì, wedding/event décor, retail seasonal programs và commercial displays. HS 670290 được dùng như proxy thương mại; một số sản phẩm seasonal hoặc décor set có thể thuộc HS khác.</p></div></div>
+        <div class="grid cols-2">
+          <div class="card"><h3>Market growth signals</h3><ul class="clean"><li>Grand View Research ước tính thị trường artificial flowers toàn cầu đạt US$3.09B năm 2024 và US$4.49B năm 2030, CAGR 6.7%.</li><li>Technavio dự báo thị trường artificial plants and flowers tại U.S. tăng thêm US$400.4M giai đoạn 2026–2030, CAGR 3.5%.</li><li>OEC ghi nhận Việt Nam xuất khẩu nhóm Artificial Vegetation khoảng US$19.2M năm 2024 và xếp thứ 7 trong dataset.</li></ul></div>
+          <div class="card"><h3>Seasonality calendar</h3><table><thead><tr><th>Quý</th><th>Nhu cầu</th><th>Action cho ZOBOX</th></tr></thead><tbody><tr><td>Q1</td><td>Valentine, Spring, Easter</td><td>Đẩy sample và collection cho mùa cưới/H2.</td></tr><tr><td>Q2</td><td>Wedding, summer décor</td><td>Chạy RFQ, gửi catalogue, test MOQ.</td></tr><tr><td>Q3</td><td>Christmas/Autumn production</td><td>Khóa lead time, QC, container planning.</td></tr><tr><td>Q4</td><td>Retail sell-out & next-year planning</td><td>Thu feedback, chuẩn bị collection mới.</td></tr></tbody></table></div>
+        </div>
+        <div class="card" style="margin-top:16px">
+          <h3>Import Demand — HS 670290 public trade proxy</h3>
+          <div class="import-compare">
+            <div class="market-panel"><h3>U.S.</h3><div class="year-row"><div class="year-label">2023</div><div class="mini-track"><div class="mini-fill" style="width:94.7%"></div></div><div class="mini-value">457.3M</div></div><div class="year-row"><div class="year-label">2024</div><div class="mini-track"><div class="mini-fill" style="width:100%"></div></div><div class="mini-value">482.7M</div></div></div>
+            <div class="market-panel"><h3>EU</h3><div class="year-row"><div class="year-label">2023</div><div class="mini-track"><div class="mini-fill" style="width:83.4%"></div></div><div class="mini-value">233.7M</div></div><div class="year-row"><div class="year-label">2024</div><div class="mini-track"><div class="mini-fill" style="width:100%"></div></div><div class="mini-value">279.9M</div></div></div>
+            <div class="market-panel"><h3>Japan</h3><div class="year-row"><div class="year-label">2023</div><div class="mini-track"><div class="mini-fill" style="width:100%"></div></div><div class="mini-value">59.9M</div></div><div class="year-row"><div class="year-label">2024</div><div class="mini-track"><div class="mini-fill" style="width:80.3%"></div></div><div class="mini-value">48.1M</div></div></div>
+          </div>
+          <p class="small">YoY từ WITS: U.S. +5.5%; EU +19.8%; Japan -19.6%. HS 670290 là proxy, không bao phủ toàn bộ seasonal/event décor basket.</p>
+        </div>
+      </section>
+
+      <section id="buyers">
+        <div class="head"><div class="num">04</div><div><h2>Buyer Markets</h2><p class="lead">ZOBOX nên ưu tiên buyer B2B có khả năng mua lặp lại hoặc mua theo collection/container. Không nên định vị Alibaba như kênh bán lẻ cổng cưới một lần.</p></div></div>
+        <div class="grid cols-3">
+          <div class="card blue-card"><h3>1. United States</h3><p>Largest import proxy; phù hợp wholesale floral supply, wedding/event rental, retail seasonal program. Entry offer: flower arch/backdrop + bouquet/stem collection.</p><button class="btn orange" data-modal="m-us">Market note</button></div>
+          <div class="card blue-card"><h3>2. European Union</h3><p>Phù hợp design, compliance và private label. Entry offer: natural-tone wedding/event décor + packaging optimization + origin proof.</p><button class="btn orange" data-modal="m-eu">EVFTA note</button></div>
+          <div class="card blue-card"><h3>3. Japan / Korea</h3><p>Phù hợp premium compact florals, orchid, tabletop arrangement, high QC. Entry offer: real-touch/compact floral with golden sample.</p><button class="btn orange" data-modal="m-jp">Quality note</button></div>
+        </div>
+        <div class="grid cols-4" style="margin-top:14px">
+          <div class="card"><span class="tag">Buyer</span><h3>Wedding planner</h3><p>Cần bộ trang trí đồng nhất, ảnh đẹp, giao đúng mùa.</p></div>
+          <div class="card"><span class="tag">Buyer</span><h3>Event rental</h3><p>Cần độ bền, dễ lắp, có thể dùng lại nhiều lần.</p></div>
+          <div class="card"><span class="tag">Buyer</span><h3>Distributor</h3><p>Cần MOQ/FOB rõ, nhiều mẫu, private label.</p></div>
+          <div class="card"><span class="tag">Buyer</span><h3>Retail brand</h3><p>Cần compliance, packaging, seasonal calendar.</p></div>
+        </div>
+      </section>
+
+      <section id="advantage">
+        <div class="head"><div class="num">05</div><div><h2>Vietnam Position</h2><p class="lead">Lợi thế Việt Nam của ZOBOX nên xoay quanh China+1, năng lực assembly thủ công, khả năng OEM/ODM, nguồn gốc Việt Nam và câu chuyện xuất khẩu. Với các thị trường có FTA, phần thuế/xuất xứ nên được trình bày theo từng nhóm sản phẩm cụ thể để tăng tính chuyên nghiệp khi làm việc với buyer.</p></div></div>
+        <table>
+          <thead><tr><th>Yếu tố</th><th>China suppliers</th><th>Vietnam / ZOBOX angle</th><th>Cách thể hiện với buyer</th></tr></thead>
+          <tbody>
+            <tr><td>Origin diversification</td><td>Buyer muốn giảm tập trung nguồn Trung Quốc</td><td>Vietnam origin có thể là điểm khác biệt trong RFQ</td><td>CO, BOM, quy trình sản xuất tại Việt Nam</td></tr>
+            <tr><td>Hand-finishing</td><td>Quy mô lớn, giá mạnh</td><td>Phù hợp sản phẩm cần lắp ráp, chỉnh cánh, phối màu, handmade finish</td><td>Ảnh xưởng, SOP, QC checklist</td></tr>
+            <tr><td>FTA & tariffs</td><td>Không có EVFTA/CPTPP origin Vietnam</td><td>Có thể có lợi thế ở EU/UK/CPTPP nếu đáp ứng rule of origin</td><td>Chuẩn bị HS/origin theo từng SKU để tư vấn buyer chính xác</td></tr>
+            <tr><td>Storytelling</td><td>Cạnh tranh đông, dễ so giá</td><td>“Vietnam artificial floral manufacturer” còn ít visible hơn trên Alibaba</td><td>Brand profile, video, case export, catalogue</td></tr>
+          </tbody>
+        </table>
+      </section>
+
+      <section id="benchmark">
+        <div class="head"><div class="num">06</div><div><h2>Supplier Benchmark</h2><p class="lead">Benchmark dưới đây kết hợp nhà bán Việt Nam trên Alibaba.com và đối thủ quốc tế cùng ngành. Đây là benchmark chiến lược, không phải ranking doanh thu chính thức.</p></div></div>
+        <div class="table-wrap">
+        <table>
+          <thead><tr><th>Supplier / brand</th><th>Public source</th><th>Sản phẩm liên quan</th><th>Insight cho ZOBOX</th><th>Link</th></tr></thead>
+          <tbody>
+            <tr><td>Global Industrial Vietnam</td><td>Alibaba public profile</td><td>Artificial plants, Christmas tree, resin/seasonal décor</td><td>Benchmark gần ngành cho artificial plants + seasonal assortment; có thể học cách mở rộng basket.</td><td><a target="_blank" href="https://vn19065096244yezl.trustpass.alibaba.com/company_profile.html">Alibaba store</a></td></tr>
+            <tr><td>Triho Company Limited</td><td>Alibaba public profile/product</td><td>Real-touch / latex orchid, artificial flowers</td><td>Benchmark sát ngành nhất về artificial flower; học cách dùng material, use-case và MOQ rõ.</td><td><a target="_blank" href="https://triho.trustpass.alibaba.com/">Store</a> · <a target="_blank" href="https://www.alibaba.com/product-detail/THAOF-012-Vietnam-Artificial-Flowers-Artificial_11000012609747.html">Product</a></td></tr>
+            <tr><td>Viettok Company Limited</td><td>Alibaba public profile/product</td><td>Crochet flower, home & garden, embroidery</td><td>Niche craft/gift positioning; không mass floral nhưng tốt cho storytelling handmade.</td><td><a target="_blank" href="https://vn1558080253mnbw.trustpass.alibaba.com/">Store</a> · <a target="_blank" href="https://www.alibaba.com/product-detail/Artificial-Crochet-Flower-Handmade-String-Woven_1601049467769.html">Product</a></td></tr>
+            <tr><td>Fengqiu Zhaogang Silk Flower Factory</td><td>Alibaba public profile</td><td>Artificial flower factory, wedding decoration services, OEM/ODM</td><td>China competitor with long factory story; ZOBOX needs Vietnam-origin + custom/private label proof to avoid pure price comparison.</td><td><a target="_blank" href="https://cnzgjh.en.alibaba.com/">Alibaba store</a></td></tr>
+            <tr><td>TrustFloral / China benchmark</td><td>Official website</td><td>Artificial flowers, trees, plants, OEM/ODM, global supply</td><td>Benchmark content: experience, catalog depth, material options, fire-retardant/UV-protected positioning.</td><td><a target="_blank" href="https://www.trustfloral.com/">Website</a></td></tr>
+          </tbody>
+        </table>
+        </div>
+        <div class="mini-sites" style="margin-top:15px">
+          <div class="mini-site"><div class="browser"><span class="dot"></span><span class="dot"></span><span class="dot"></span></div><div class="mini-hero">🌸</div><div class="mini-body"><b>Triho</b><p>Benchmark sát nhất cho artificial flowers/orchid từ Việt Nam trên Alibaba.</p><a class="pill orange" target="_blank" href="https://triho.trustpass.alibaba.com/">Open supplier</a></div></div>
+          <div class="mini-site"><div class="browser"><span class="dot"></span><span class="dot"></span><span class="dot"></span></div><div class="mini-hero">🎄</div><div class="mini-body"><b>Global Industrial Vietnam</b><p>Artificial plants + seasonal décor; benchmark basket mở rộng.</p><a class="pill orange" target="_blank" href="https://vn19065096244yezl.trustpass.alibaba.com/company_profile.html">Open supplier</a></div></div>
+          <div class="mini-site"><div class="browser"><span class="dot"></span><span class="dot"></span><span class="dot"></span></div><div class="mini-hero">🧶</div><div class="mini-body"><b>Viettok</b><p>Craft flower/home décor; benchmark cho câu chuyện handmade/niche.</p><a class="pill orange" target="_blank" href="https://vn1558080253mnbw.trustpass.alibaba.com/">Open supplier</a></div></div>
+        </div>
+      </section>
+
+      <section id="pricing">
+        <div class="head"><div class="num">07</div><div><h2>Pricing & SEO</h2><p class="lead">Giá public trên Alibaba chỉ nên dùng làm benchmark tham khảo, không phải báo giá chính thức. ZOBOX nên cạnh tranh bằng collection logic, hình ảnh thật, MOQ rõ và khả năng OEM/ODM.</p></div></div>
+        <table>
+          <thead><tr><th>Sub-category</th><th>Public benchmark</th><th>Buyer so sánh</th><th>Pricing angle cho ZOBOX</th><th>Example link</th></tr></thead>
+          <tbody>
+            <tr><td>Flower wall / backdrop</td><td>Giá thay đổi mạnh theo size/density/MOQ</td><td>Độ dày, màu, fire retardant, lắp đặt, reuse</td><td>Bán theo set wedding/event, không chỉ theo tấm.</td><td><a target="_blank" href="https://www.alibaba.com/countrysearch/CN/wholesale-artificial-flowers.html">Alibaba benchmark</a></td></tr>
+            <tr><td>Real-touch orchid / stem</td><td>Vietnam benchmark như Triho có MOQ thấp theo listing</td><td>Realism, latex feel, stem length, color consistency</td><td>Premium compact floral cho Japan/EU.</td><td><a target="_blank" href="https://www.alibaba.com/product-detail/THAOF-101-Artificial-Orchid-Flower-Plant_11000012731247.html">Example</a></td></tr>
+            <tr><td>Bouquet / arrangement</td><td>MOQ thường từ vài chục đến vài trăm pcs tùy mẫu</td><td>Head count, stem length, packaging, colorway</td><td>Collection theo mùa cưới/retail planogram.</td><td><a target="_blank" href="https://www.alibaba.com/product-detail/Wholesale-Price-Real-Touch-Artificial-Flower_1601456573756.html">Example</a></td></tr>
+            <tr><td>Wreath / seasonal décor</td><td>Private label/packaging thường cần MOQ cao hơn</td><td>Seasonal theme, packaging, retail compliance</td><td>Christmas/holiday program + production calendar.</td><td><a target="_blank" href="https://www.alibaba.com/product-detail/Wholesale-artificial-wreath-flower-heart-style_1601239360652.html">Example</a></td></tr>
+          </tbody>
+        </table>
+        <div class="grid cols-2" style="margin-top:14px">
+          <div class="card"><h3>Title formula</h3><p><b>[Application] + [Flower/Product] + [Material/Feature] + [Buyer]</b></p><p class="small">Ví dụ: “Custom Wedding Flower Arch Artificial Rose Backdrop for Event Rental Company”.</p></div>
+          <div class="card"><h3>Keyword clusters</h3><p>wedding flower arch · artificial flower wall · event floral backdrop · silk rose stem · real touch orchid · artificial bouquet wholesale · wedding aisle flower · private label artificial flowers · OEM artificial floral décor · Vietnam artificial flower manufacturer</p></div>
+        </div>
+      </section>
+
+      <section id="opportunity">
+        <div class="head"><div class="num">08</div><div><h2>Opportunity Matrix</h2><p class="lead">Cơ hội tốt nhất của ZOBOX là biến sản phẩm hoa giả thành giải pháp B2B theo mùa, theo ứng dụng và theo buyer segment.</p></div></div>
+        <div class="matrix">
+          <div class="card"><span class="tag">High priority</span><h3>Wedding/event décor packages</h3><p>Flower arch, backdrop, aisle, table runner. Tệp buyer: event company, rental company, wedding planner.</p></div>
+          <div class="card"><span class="tag">High priority</span><h3>OEM/private label floral collections</h3><p>Custom color, packaging, logo, catalogue cho distributor/retail brand.</p></div>
+          <div class="card"><span class="tag">White space</span><h3>Vietnam-origin floral manufacturer</h3><p>Trên Alibaba, nhà bán Việt Nam trong artificial flowers còn ít hơn Trung Quốc; có thể nổi bật nếu proof đủ mạnh.</p></div>
+          <div class="card"><span class="tag">Avoid</span><h3>Bán lẻ/khách nhỏ lẻ</h3><p>Không nên để gian hàng bị kéo về khách mua vài bó. Cần MOQ, container/sample policy và title B2B rõ.</p></div>
+        </div>
+      </section>
+
+      <section id="roadmap">
+        <div class="head"><div class="num">09</div><div><h2>90-Day Roadmap</h2><p class="lead">Roadmap ưu tiên chuẩn hóa proof trước khi đẩy traffic, vì ngành hoa giả dễ bị so giá nếu thiếu hình ảnh xưởng, collection logic và buyer use case.</p></div></div>
+        <div class="roadmap">
+          <div class="card"><h3>0–30 ngày</h3><ul class="clean"><li>Chọn 50–80 hero SKUs theo wedding/event/seasonal.</li><li>Chụp ảnh xưởng, QC, đóng gói, container loading.</li><li>Chuẩn hóa MOQ, lead time, FOB/CIF, custom options.</li></ul></div>
+          <div class="card"><h3>31–60 ngày</h3><ul class="clean"><li>Tạo product pages theo buyer: wedding planner, event rental, distributor.</li><li>Viết title/keyword theo application.</li><li>Chuẩn bị sample kit và catalogue PDF.</li></ul></div>
+          <div class="card"><h3>61–90 ngày</h3><ul class="clean"><li>Chạy RFQ/keyword test ở U.S., EU, Japan/Korea.</li><li>Theo dõi inquiry quality: buyer type, MOQ, market.</li><li>Tối ưu offer theo nhóm có phản hồi tốt nhất.</li></ul></div>
+        </div>
+        <div class="card orange-card" style="margin-top:14px"><h3>3 lý do nên mở Alibaba.com</h3><ul class="clean"><li><b>Đúng tệp B2B:</b> Alibaba phù hợp với wholesaler/event company/distributor hơn kênh social bán lẻ.</li><li><b>Vietnam differentiation:</b> ít nhà bán Việt Nam visible hơn Trung Quốc; nếu ZOBOX có proof xưởng sẽ tạo khác biệt.</li><li><b>Chuẩn hóa xuất khẩu:</b> gian hàng giúp biến catalogue, MOQ, sample, lead time, private label thành hệ thống bán hàng quốc tế.</li></ul></div>
+      </section>
+
+      <section id="sources">
+        <div class="head"><div class="num">SRC</div><div><h2>Sources</h2><p class="lead">Nguồn và benchmark được tổng hợp từ thông tin công khai, dữ liệu thị trường và các trang Alibaba.com public để hỗ trợ định hướng chiến lược xuất khẩu.</p></div></div>
+        <div class="source-box">
+          <div class="source"><b>ZOBOX public presence:</b> <a target="_blank" href="https://www.facebook.com/p/ZOBOX-Artificial-Flower-Manufacturing-Company-61558031019046/">Facebook page</a>; <a target="_blank" href="https://www.instagram.com/zoboxflowers/">Instagram @zoboxflowers</a>.</div>
+          <div class="source"><b>Market reports:</b> <a target="_blank" href="https://www.grandviewresearch.com/industry-analysis/artificial-flowers-market-report">Grand View Research artificial flowers market</a>; <a target="_blank" href="https://www.technavio.com/report/artificial-plants-and-flowers-market-industry-in-us-analysis">Technavio U.S. artificial plants and flowers market</a>; <a target="_blank" href="https://oec.world/en/profile/bilateral-product/artificial-vegetation/reporter/vnm">OEC Vietnam Artificial Vegetation trade</a>.</div>
+          <div class="source"><b>Trade proxy:</b> World Bank WITS / UN Comtrade <a target="_blank" href="https://wits.worldbank.org/trade/comtrade/en/country/USA/year/2024/tradeflow/Imports/partner/ALL/product/670290">U.S. 2024 HS 670290</a>, <a target="_blank" href="https://wits.worldbank.org/trade/comtrade/en/country/EUN/year/2024/tradeflow/Imports/partner/ALL/product/670290">EU 2024 HS 670290</a>, <a target="_blank" href="https://wits.worldbank.org/trade/comtrade/en/country/JPN/year/2024/tradeflow/Imports/partner/ALL/product/670290">Japan 2024 HS 670290</a>.</div>
+          <div class="source"><b>Tariff / FTA references:</b> <a target="_blank" href="https://hts.usitc.gov/search?query=6702">USITC HTS 6702</a>; <a target="_blank" href="https://trade.ec.europa.eu/access-to-markets/en/content/eu-vietnam-free-trade-agreement">EU Access2Markets EVFTA</a>; <a target="_blank" href="https://www.vietnamtradeportal.gov.vn/index.php?id=2067&r=site%2Fdisplay">Vietnam Trade Portal CPTPP ROO</a>; <a target="_blank" href="https://vntr.moit.gov.vn/fta/27/2">Vietnam National Trade Repository UKVFTA</a>.</div>
+          <div class="source"><b>Alibaba public benchmarks:</b> <a target="_blank" href="https://www.alibaba.com/artificial-flower-vietnam-suppliers.html">Artificial Flower Vietnam suppliers proxy</a>; <a target="_blank" href="https://vn19065096244yezl.trustpass.alibaba.com/company_profile.html">Global Industrial Vietnam</a>; <a target="_blank" href="https://triho.trustpass.alibaba.com/">Triho</a>; <a target="_blank" href="https://vn1558080253mnbw.trustpass.alibaba.com/">Viettok</a>; <a target="_blank" href="https://cnzgjh.en.alibaba.com/">Fengqiu Zhaogang Silk Flower Factory</a>.</div>
+          <div class="source"><b>Methodology:</b> Market figures use published market pages and WITS/UN Comtrade HS 670290 as proxy. Pricing uses public listing benchmarks. Supplier examples are selected from public Alibaba.com pages for strategic comparison.</div>
+        </div>
+      </section>
+    </div>
+  </main>
+</div>
+
+<div class="modal" id="modal"><div class="modal-card"><button class="close" id="close">×</button><div id="modalContent"></div></div></div>
+<script>
+const modal=document.getElementById('modal'),content=document.getElementById('modalContent');
+const data={
+  "m-method":{title:"Research note",html:`<p>Báo cáo tổng hợp market evidence, benchmark nhà cung cấp Việt Nam trên Alibaba, pricing/SEO, opportunity matrix và roadmap 90 ngày để hỗ trợ ZOBOX định hướng kênh xuất khẩu B2B.</p>`},
+  "m-us":{title:"United States — market note",html:`<p>U.S. là thị trường import proxy lớn nhất: US$457.3M năm 2023 và US$482.7M năm 2024 cho HS 670290, khoảng +5.5% YoY.</p><p>Entry offer nên là wedding/event floral sets, seasonal retail và private label.</p><a class="cta" target="_blank" href="https://wits.worldbank.org/trade/comtrade/en/country/USA/year/2024/tradeflow/Imports/partner/ALL/product/670290">Open WITS</a>`},
+  "m-eu":{title:"EU — EVFTA note",html:`<p>EU HS 670290 imports tăng từ khoảng US$233.7M năm 2023 lên US$279.9M năm 2024, khoảng +19.8% YoY.</p><p>EVFTA có thể là lợi thế khi ZOBOX chuẩn bị rõ HS code, nguồn gốc và hồ sơ xuất xứ theo từng nhóm sản phẩm.</p><a class="cta" target="_blank" href="https://trade.ec.europa.eu/access-to-markets/en/content/eu-vietnam-free-trade-agreement">Open EVFTA</a>`},
+  "m-jp":{title:"Japan / Korea — quality note",html:`<p>Japan nhỏ hơn U.S./EU nhưng phù hợp sản phẩm compact premium, orchid, tabletop arrangement và buyer yêu cầu QC cao.</p><p>ZOBOX nên chuẩn bị golden sample, bảng màu, AQL/QC checklist và packaging ổn định.</p><a class="cta" target="_blank" href="https://wits.worldbank.org/trade/comtrade/en/country/JPN/year/2024/tradeflow/Imports/partner/ALL/product/670290">Open WITS Japan</a>`}
+};
+document.querySelectorAll('[data-modal]').forEach(btn=>btn.addEventListener('click',()=>{const m=data[btn.dataset.modal];content.innerHTML=`<h3>${m.title}</h3>${m.html}`;modal.classList.add('show')}));
+document.getElementById('close').onclick=()=>modal.classList.remove('show');
+modal.addEventListener('click',e=>{if(e.target===modal)modal.classList.remove('show')});
+document.addEventListener('keydown',e=>{if(e.key==='Escape')modal.classList.remove('show')});
+</script>
+</body>
+</html>
